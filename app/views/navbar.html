@@ -1,0 +1,49 @@
+<div class="header">
+  <nav class="navbar white" role="navigation">
+  	<div class="container">
+  		<a href="#/" class="brand-logo hide-on-small-only"><img src="images/yeoman.png" alt="I'm Yeoman"></a>
+	  <ul id="nav-mobile" class="right">
+	  	<li><a href="#/addcoffee"><i class="material-icons grey-text" style="font-size: 4em">add</i></a></li>
+	    <li><a href="#" onclick="toggleLogin(); return false;"><i class="material-icons grey-text" style="font-size: 4em">person_pin</i></a></li>
+	  </ul>
+  	</div>
+
+  </nav>
+</div>
+
+<div id="dropdown-navbar" class="dropdown-custom">
+	<div class="card z-depth-3">
+		<div class="card-content">
+			<p>Connectez-vous, ou <a href="#/signup">créez un compte</a></p>
+			<form>
+				<div class="row">
+				  <div class="input-field col s12">
+				    <input id="email" type="email" required ng-class="{'invalid': registerForm.$dirty && registerForm.email.$invalid, 'valid': registerForm.email.$valid}">
+				    <label for="email">Email</label>
+				  </div>
+				</div>
+				<div class="row">
+				  <div class="input-field col s12">
+				    <input id="password" type="password" name="password" ng-model="password" ng-minlength="6" required ng-class="{'invalid': registerForm.$dirty && registerForm.password.$invalid, 'valid': registerForm.password.$valid}">
+				    <label for="password">Mot de passe</label>
+				  </div>
+				</div>
+				<div class="row">
+				   <div class="input-field col s6">
+				      <input type="submit" class="btn deep-orange" value="Se connecter" ng-disabled="registerForm.$invalid"/>
+				   </div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+    var toggleLogin = function(){
+    $('.dropdown-custom').toggleClass('dropdown-displayed');
+    $('.dropdown-custom').slideDown(200);
+    $('.dropdown-button').toggleClass('active');
+  };
+  
+
+</script>

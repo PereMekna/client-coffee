@@ -1,0 +1,16 @@
+
+<div ng-controller="CoffeesCtrl">
+	<div ng-include="'./views/loader.html'" class="center" ng-show="loading">
+	</div>
+	<div ng-include="'./views/error.html'" ng-show="error">
+	</div>
+	<div ng-repeat="coffee in list">
+		<div class="card">
+			<div class="card-content">
+				<span class="card-title">{{coffee.id}} {{coffee.name}}</span><br />
+				{{coffee.city}}
+			</div>
+		</div>
+	        
+	</div>
+</div>
