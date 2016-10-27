@@ -15,7 +15,7 @@
 	<div class="card z-depth-3">
 		<div class="card-content" ng-hide="logged">
 			<p>Connectez-vous, ou <a href="#/signup">créez un compte</a></p>
-			<form ng-submit="connectUser()">
+			<form ng-submit="connectUser()" ng-hide="loading">
 				<div class="row">
 				  <div class="input-field col s12">
 				    <input id="email" type="email" ng-model="email" required ng-class="{'invalid': registerForm.$dirty && registerForm.email.$invalid, 'valid': registerForm.email.$valid}">
@@ -35,8 +35,11 @@
 				</div>
 			</form>
 		</div>
+		<div ng-include="'./views/loader.html'" class="center" ng-show="loading">
+		</div>
 		<div class="card-content" ng-show="logged">
-			<span class="card-title">Bienvenue</span>
+			<span class="card-title">Bienvenue {{username}} </span><br />
+			<a href="" ng-click="logout()">Se déconnecter</a>
 		</div>
 	</div>
 </div>
