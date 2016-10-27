@@ -9,12 +9,16 @@
  */
 var signupModule = angular.module('testApp');
 
-signupModule.controller('SignupCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+signupModule.controller('SignupCtrl', function ($scope, $http) {
+    $scope.addUser = function() {
+      $http.post('http://reggaeshark.eu:3000/api/Users', {'username': $scope.username, 
+        'email' : $scope.email, 'password': $scope.password})
+      .then(function(response){
+        console.log("success", response);
+      }, function(error){
+        console.log("error", error);
+      });
+    };
   });
 
 signupModule.directive('equalsTo', [function () {

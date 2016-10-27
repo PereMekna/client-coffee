@@ -1,7 +1,7 @@
 <div class="header">
   <nav class="navbar white" role="navigation">
   	<div class="container">
-  		<a href="#/" class="brand-logo hide-on-small-only"><img src="images/yeoman.png" alt="I'm Yeoman"></a>
+  		<a href="#/" class="deep-orange-text brand-logo hide-on-small-only">oklm</a>
 	  <ul id="nav-mobile" class="right nav-icon">
 	  	<li><a href="#/addcoffee"><i class="material-icons grey-text text-darken-1" style="font-size: 3em">add</i></a></li>
 	    <li><a href="#" onclick="toggleLogin(); return false;"><i class="material-icons grey-text text-darken-1" style="font-size: 3em">person_pin</i></a></li>
@@ -11,14 +11,14 @@
   </nav>
 </div>
 
-<div id="dropdown-navbar" class="dropdown-custom">
+<div id="dropdown-navbar" class="dropdown-custom" ng-controller="LoginCtrl">
 	<div class="card z-depth-3">
-		<div class="card-content">
+		<div class="card-content" ng-hide="logged">
 			<p>Connectez-vous, ou <a href="#/signup">créez un compte</a></p>
-			<form>
+			<form ng-submit="connectUser()">
 				<div class="row">
 				  <div class="input-field col s12">
-				    <input id="email" type="email" required ng-class="{'invalid': registerForm.$dirty && registerForm.email.$invalid, 'valid': registerForm.email.$valid}">
+				    <input id="email" type="email" ng-model="email" required ng-class="{'invalid': registerForm.$dirty && registerForm.email.$invalid, 'valid': registerForm.email.$valid}">
 				    <label for="email">Email</label>
 				  </div>
 				</div>
@@ -34,6 +34,9 @@
 				   </div>
 				</div>
 			</form>
+		</div>
+		<div class="card-content" ng-show="logged">
+			<span class="card-title">Bienvenue</span>
 		</div>
 	</div>
 </div>

@@ -1,18 +1,18 @@
-<div class="card">
+<div class="card" ng-controller="SignupCtrl">
   <div class="card-content">
     <div class="row"> 
        <div class="col s12 center">
           <h2>S'inscrire</h2>
        </div>
-       <form class="col s12" name="registerForm">
+       <form class="col s12" name="registerForm" ng-submit="addUser()">
 
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="username" type="text" required ng-class="{'invalid': registerForm.$dirty && registerForm.username.$invalid, 'valid': registerForm.username.$valid}" ng-minlength="6">
+              <input id="username" type="text" name="username" ng-model="username" required ng-class="{'invalid': registerForm.$dirty && registerForm.username.$invalid, 'valid': registerForm.username.$valid}" ng-minlength="6">
               <label for="username">Identifiant</label>
             </div>
             <div class="input-field col s12 m6">
-              <input id="email" type="email" required ng-class="{'invalid': registerForm.$dirty && registerForm.email.$invalid, 'valid': registerForm.email.$valid}">
+              <input id="email" type="email" name="email" ng-model="email" required ng-class="{'invalid': registerForm.$dirty && registerForm.email.$invalid, 'valid': registerForm.email.$valid}">
               <label for="email">Email</label>
             </div>
           </div>
