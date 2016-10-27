@@ -102,3 +102,16 @@ div.dropdown-custom.dropdown-displayed {
   width: 280px;
   margin-left: 10px;
 }
+
+@media only screen and (min-width: 601px) {
+  .nav-icon li, .nav-icon li a {
+    height: 64px;
+  }
+  .nav-icon i {
+    padding-top: 3.5px;
+  }
+
+  div.dropdown-custom {
+    top: 64px;
+  }
+}

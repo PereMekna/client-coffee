@@ -25,12 +25,14 @@
 	</div>
 	<div ng-include="'./views/error.html'" ng-show="error">
 	</div>
-	<div ng-repeat="coffee in list">
-		<div class="card">
-			<div class="card-content">
-				<span class="card-title">{{coffee.id}} {{coffee.name}}</span><br />
-				{{coffee.city}}
-			</div>
+	<div class="card">
+		<div class="card-content">
+			<ul class="collection">
+				<li class="collection-item" ng-repeat="coffee in list">
+					<span class="card-title">{{coffee.id}} {{coffee.name}}</span><br />
+					{{coffee.city}}
+				</li>
+			</ul>
 		</div>
 	        
 	</div>

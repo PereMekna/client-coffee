@@ -11,7 +11,7 @@ angular.module('testApp')
   .controller('AddcoffeeCtrl', function ($scope, $http) {
 
   	$scope.loading = true;
-  	$http.get('http://localhost:3000/api/CoffeeShops?filter[order]=id%20DESC').then(function(response){
+  	$http.get('http://reggaeshark.eu:3000/api/CoffeeShops?filter[order]=id%20DESC').then(function(response){
   		$scope.list = response.data;
   		$scope.loading = false;
   	}, function(error){
@@ -20,7 +20,7 @@ angular.module('testApp')
     });
 
   	$scope.addCoffee = function () {
-  		$http.post('http://localhost:3000/api/CoffeeShops', {'name' : $scope.name, 'city': $scope.city}).then(function(response){
+  		$http.post('http://reggaeshark.eu:3000/api/CoffeeShops', {'name' : $scope.name, 'city': $scope.city}).then(function(response){
   			$scope.list.unshift(response.data);
   		});
   	}
