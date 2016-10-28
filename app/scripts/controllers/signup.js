@@ -9,11 +9,12 @@
  */
 var signupModule = angular.module('testApp');
 
-signupModule.controller('SignupCtrl', function ($scope, $http) {
+signupModule.controller('SignupCtrl', function ($scope, $http, $location) {
     $scope.addUser = function() {
       $http.post('http://reggaeshark.eu:3000/api/Users', {'username': $scope.username, 
         'email' : $scope.email, 'password': $scope.password})
       .then(function(response){
+        $location.path('/');
         console.log("success", response);
       }, function(error){
         console.log("error", error);
