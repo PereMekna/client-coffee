@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngMap',
+    'google.places'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -43,6 +45,11 @@ angular
         templateUrl: 'views/addcoffee.html',
         controller: 'AddcoffeeCtrl',
         controllerAs: 'addcoffee'
+      })
+      .when('/maps', {
+        templateUrl: 'views/maps.html',
+        controller: 'MapsCtrl',
+        controllerAs: 'maps'
       })
       .otherwise({
         redirectTo: '/'

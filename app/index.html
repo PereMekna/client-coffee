@@ -5,6 +5,7 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="/bower_components/angular-google-places-autocomplete/src/autocomplete.css">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -45,6 +46,7 @@
 
 
     </script>
+
     
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -57,6 +59,9 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src='//maps.googleapis.com/maps/api/js?key=AIzaSyBNJwfFIMn7n8wjih28hOJZEpV4rp_CVp8&libraries=places'></script>
+    <script src="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js"></script>
+    <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -68,6 +73,8 @@
         <script src="scripts/controllers/coffees.js"></script>
         <script src="scripts/controllers/addcoffee.js"></script>
         <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/maps.js"></script>
+        <script src="scripts/services/userservice.js"></script>
         <!-- endbuild -->
 </body>
 </html>
